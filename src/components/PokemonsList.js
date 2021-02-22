@@ -35,6 +35,7 @@ export default function Pokemons({ pokemon }) {
 
   const handleCapturePoke = (e, pokemon) => {
     if (pokemon.base_experience <= 100) {
+      e.preventDefault();
       dispatch(capturePokemon(pokemon));
       Swal.fire("Congrats!", "You've catch a pokemon!", "success");
     } else {

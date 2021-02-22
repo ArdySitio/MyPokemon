@@ -6,11 +6,11 @@ export const capturePokemon = (myPokemon) => {
   };
 };
 
-export const releasePokemon = (myPokemon) => {
+export const releasePokemon = (key) => {
   // console.log(myPokemon, "<<< new action");
   return {
     type: "RELEASE",
-    payload: myPokemon,
+    payload: key,
   };
 };
 

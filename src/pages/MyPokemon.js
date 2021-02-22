@@ -12,7 +12,7 @@ export default function MyPokemon() {
         {pokemons.map((pokemon, i) => {
           return (
             <Grid item xs={3} key={i}>
-              <Pokemons pokemon={pokemon} key={i} />
+              <Pokemons pokemon={pokemon} idx={i} key={i} />
             </Grid>
           );
         })}
