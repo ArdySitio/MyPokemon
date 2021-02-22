@@ -27,13 +27,13 @@ const CardItem = withStyles({
   },
 })(Card);
 
-export default function PokeCapture({ pokemon }) {
+export default function PokeCapture({ pokemon, idx }) {
   const dispatch = useDispatch();
 
-  const myPokemons = useSelector((state) => state.myPokemons);
+  console.log(idx, ">>> pokemon");
 
-  const handleRelease = (e, pokemon) => {
-    dispatch(releasePokemon(pokemon));
+  const handleRelease = (idx) => {
+    dispatch(releasePokemon(idx));
   };
 
   return (
@@ -57,7 +57,7 @@ export default function PokeCapture({ pokemon }) {
         <Button
           size="small"
           style={{ color: "red" }}
-          onClick={() => handleRelease(pokemon.data)}
+          onClick={() => handleRelease(idx)}
         >
           Release
         </Button>

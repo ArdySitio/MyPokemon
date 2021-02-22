@@ -13,9 +13,8 @@ const reducer = (state = initialState, action) => {
       };
     case "RELEASE":
       return {
-        myPokemon: [
-          ...state.myPokemon.filter((pokemon) => pokemon !== action.payload),
-        ],
+        ...state,
+        myPokemon: state.myPokemon.filter((pokemon, i) => i !== action.payload),
       };
     case "DETAIL_POKEMON":
       return {
